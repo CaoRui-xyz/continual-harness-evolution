@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_merge_antijoin.921feefe.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/reshape/merge/test_merge_antijoin.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/series/methods/test_equals.py",
+    "pandas/tests/io/parser/dtypes/test_empty.py",
+    "pandas/tests/indexes/timedeltas/methods/test_factorize.py",
+    "pandas/tests/extension/test_extension.py",
+    "pandas/tests/groupby/methods/test_nlargest_nsmallest.py"
+  ],
+  "problem_statement_sha256": "6a6ff976dc395014b412f0260afb5022bf1956edd00c1cf4c7be6adf21acfc5b",
+  "mask_patch_sha256": "24a857b97605867f8d00ac276c4f01877595e07374b7cc1d1481329d6dccd4b4",
+  "test_patch_sha256": "c84eafd9a6bbfdc8f7472e70bdb4e0537a1c1c0b94b1b199086940f081c07209",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

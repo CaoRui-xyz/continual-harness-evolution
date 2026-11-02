@@ -1,0 +1,169 @@
+[project]
+# Primary runtime dependencies imported by the agent runtime itself.
+dependencies = [
+  "pyyaml>=6.0",
+  "pydantic>=2.7",
+  "jsonschema>=4.0.0",
+  "requests>=2.25.0",
+  "jinja2>=3.0.0",
+  "beautifulsoup4>=4.9.0",
+  "openai>=2.14.0",
+  "httpx>=0.28.1",
+  "mcp>=1.12.3",
+  "sqlmodel>=0.0.18",
+  "pytest>=7.0.0",
+  "pytest-cov>=4.0.0",
+  "pandas>=2.3.1",
+  "langfuse>=3.2.3",
+  "tiktoken>=0.5.0",
+  "anthropic>=0.84.0",
+  "json-repair>=0.55.0",
+  "ag-ui-protocol>=0.1.10",
+  # HTTP transport requires fastapi
+  "fastapi>=0.104.0",
+  "uvicorn[standard]>=0.24.0",
+  "python-dotenv>=1.0.0",
+  "asyncer>=0.0.12",
+  "python-ulid>=3.1.0",
+  "nest_asyncio>=1.6.0",  # Allow nested event loops for sync/async interop
+]
+description = "A general-purpose agent framework"
+name = "nexau"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.3.9"
+
+[project.scripts]
+# Public entry point exposed via `pip install nexau`.
+nexau-cli = "nexau.cli_wrapper:main"  # Keep for backward compatibility (Node.js CLI)
+nexau = "nexau.cli.main:main"         # NEW unified Python CLI entry point
+
+[project.optional-dependencies]
+# Async database drivers for SQLDatabaseEngine
+async-db = [
+  "aiosqlite>=0.19.0",
+  "asyncpg>=0.29.0",
+  "aiomysql>=0.2.0",
+  "greenlet>=3.0.0",
+]
+
+[dependency-groups]
+# Local-only tooling deps used in lint/type/test workflows.
+dev = [
+  "ruff>=0.8.0",
+  "mypy>=1.11.0",
+  "lxml>=6.0.2",  # Required by mypy --cobertura-xml-report
+  "pyright==1.1.399",
+  "pre-commit>=3.8.0",
+  "types-pyyaml>=6.0.12.20250915",
+  "types-requests>=2.32.4.20250913",
+  "types-jsonschema>=4.25.1.20251009",
+  "pandas-stubs>=2.3.3.251201",
+  "types-setuptools>=80.9.0.20250822",
+  "hypothesis>=6.100.0",
+  "aiosqlite>=0.19.0",  # For testing async SQLite
+  "greenlet>=3.0.0",  # Required by SQLAlchemy async engine
+  "pytest-timeout>=2.4.0",
+  "chardet>=5.0.0",  # Optional: used by read_file for encoding detection
+  "e2b>=2.12.0",
+  "pytest-xdist>=3.8.0",
+]
+
+[build-system]
+# Minimal build backend requirements for hatchling-free packaging.
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=45", "wheel"]
+
+[tool.setuptools.packages.find]
+include = ["nexau*"]
+where = ["."]
+
+[tool.setuptools.package-data]
+nexau = [
+  "archs/main_sub/prompts/*.j2",
+  "archs/main_sub/execution/middleware/context_compaction/prompts/*.md",
+  "archs/main_sub/team/tools/*.yaml",
+  "archs/tool/builtin/description/*.yaml",
+  "cli/dist/*.js",
+  "cli/dist/*.js.map",
+]
+
+[tool.ruff]
+# Keep ruff aligned with formatter + lint outputs used in CI.
+extend-exclude = [
+  "examples/",
+]
+line-length = 140
+output-format = "grouped"
+respect-gitignore = true
+target-version = "py312"
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "space"
+quote-style = "double"
+
+[tool.ruff.lint]
+# Enable opinionated but still CI-friendly lint rules.
+ignore = []
+select = [
+  "E",  # pycodestyle errors (indent/spacing)
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes correctness
+  "I",  # import sorting
+  "N",  # pep8-naming
+  "UP", # pyupgrade
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+  "F401", # namespace packages commonly re-export symbols
+]
+"tests/**/__init__.py" = [
+  "F401", # re-export fixtures to simplify imports
+  "F403", # allow star-imports inside test package initializers
+]
+"tests/**/*.py" = [
+  "N802", # fixtures often use CamelCase/mixedCase names
+  "N803", # fixture parameters commonly violate pep8 naming
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["nexau", "tests"]
+
+[tool.mypy]
+# Stricter default type-checking; individual modules fall back below.
+cache_fine_grained = true
+exclude = [
+  ".venv/.*",
+  ".nox/.*",
+  "examples/",
+]
+implicit_reexport = true
+namespace_packages = true
+no_implicit_optional = true
+pretty = true
+python_version = "3.12"
+show_error_codes = true
+strict_equality = true
+warn_unused_configs = true
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+reportUnusedFunction = false
+
+# Ensure Pyright looks at the correct root
+include = ["nexau"]
+exclude = ["**/node_modules", "**/__pycache__", "nexau/cli", "tests"]
+venvPath = "."
+venv = ".venv"
+
+[[tool.mypy.overrides]]
+module = [
+    "chardet.*",
+    "e2b.*",
+    "nest_asyncio.*",
+    "pandas.*"
+]
+ignore_missing_imports = true

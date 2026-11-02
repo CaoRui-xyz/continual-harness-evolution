@@ -1,0 +1,22 @@
+{
+  "instance_id": "mlflow__mlflow.93dab383.test_client_webhooks.75e39b52.lv1",
+  "repo": "mlflow/mlflow",
+  "base_commit": "93dab383a1a3fc9882ebc32283ad2a05d79ff70f",
+  "image_name": "docker.io/libercoders/featurebench-specs_mlflow-instance_efffa87e",
+  "fail_to_pass": [
+    "tests/tracking/test_client_webhooks.py"
+  ],
+  "pass_to_pass": [
+    "tests/metrics/genai/test_prompt_template.py",
+    "tests/entities/test_run.py",
+    "tests/tracking/_model_registry/test_model_registry_client.py",
+    "tests/entities/test_run_status.py",
+    "tests/entities/test_span.py"
+  ],
+  "problem_statement_sha256": "cceb66d784f977a414fa910eff03a97476b8c8d79fd191ca5aa461f9adc18cc6",
+  "mask_patch_sha256": "a8a4f21e041ff7eff971247bbdc3ef3b1f720ed58be9967cb44ee3f1fde82179",
+  "test_patch_sha256": "2baeabf62a53e78ba6258b747000aa0e50e11d3c2e1602f2b172dcfb26beef6a",
+  "repo_settings_sha256": "3e324b82546a88e535e415391772799fa391da254dbef448e6d58c4138747ec9",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

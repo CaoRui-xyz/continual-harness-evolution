@@ -1,0 +1,22 @@
+{
+  "instance_id": "sphinx-doc__sphinx.e347e59c.test_ext_intersphinx.04901873.lv1",
+  "repo": "sphinx-doc/sphinx",
+  "base_commit": "e347e59ccc27a646c974526252e39a63870f6ea3",
+  "image_name": "docker.io/libercoders/featurebench-specs_sphinx-instance_6191afb1",
+  "fail_to_pass": [
+    "tests/test_ext_intersphinx/test_ext_intersphinx.py"
+  ],
+  "pass_to_pass": [
+    "tests/test_transforms/test_transforms_post_transforms.py",
+    "tests/test_builders/test_build_html_download.py",
+    "tests/test_environment/test_environment_indexentries.py",
+    "tests/test_writers/test_writer_latex.py",
+    "tests/test_markup/test_parser.py"
+  ],
+  "problem_statement_sha256": "aba13846eaad6e025c1b46c576999682dd05458c675c6cf9cbac649516675c9d",
+  "mask_patch_sha256": "f6636960cd0f3250722159ad57589b66b4e98366c02c3e3df8d9a0bdcba8b84b",
+  "test_patch_sha256": "258c4e3d5ab160492676463d6f633c24a56e351041be65832800bdb51bb7a715",
+  "repo_settings_sha256": "c395e648ceb5dcc58ddc85f700e7fc90604d87e98669c3c6534135708962f96d",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

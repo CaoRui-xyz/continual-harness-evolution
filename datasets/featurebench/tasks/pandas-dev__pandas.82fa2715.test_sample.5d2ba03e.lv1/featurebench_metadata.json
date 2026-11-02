@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_sample.5d2ba03e.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/groupby/methods/test_sample.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/indexes/multi/test_compat.py",
+    "pandas/tests/series/methods/test_duplicated.py",
+    "pandas/tests/io/pytables/test_put.py",
+    "pandas/tests/io/excel/test_xlrd.py",
+    "pandas/tests/indexing/multiindex/test_multiindex.py"
+  ],
+  "problem_statement_sha256": "50f4fadc5be79b3e3a3379cf3b2d2f687d1561ca3874e1c01a46b9ae6d9f6358",
+  "mask_patch_sha256": "362125fac5a5064d35555f67c201c5d61d6a2945cac49762c941c2cbcdbc4fc8",
+  "test_patch_sha256": "827b1296be464fcf0a2ad636aa7ad42e77d3c5b31cf06efa239795a9c1d099a9",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

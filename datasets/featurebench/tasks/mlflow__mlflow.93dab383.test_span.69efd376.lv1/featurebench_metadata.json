@@ -1,0 +1,22 @@
+{
+  "instance_id": "mlflow__mlflow.93dab383.test_span.69efd376.lv1",
+  "repo": "mlflow/mlflow",
+  "base_commit": "93dab383a1a3fc9882ebc32283ad2a05d79ff70f",
+  "image_name": "docker.io/libercoders/featurebench-specs_mlflow-instance_efffa87e",
+  "fail_to_pass": [
+    "tests/entities/test_span.py"
+  ],
+  "pass_to_pass": [
+    "tests/utils/test_class_utils.py",
+    "tests/projects/test_databricks.py",
+    "tests/pytorch/test_pytorch_metric_value_conversion_utils.py",
+    "tests/tracking/context/test_databricks_command_context.py",
+    "tests/entities/test_evaluation_dataset.py"
+  ],
+  "problem_statement_sha256": "e897deef4565e24e29d66b4e0d4b7d4f1b4e9ca676ee6ebeb6291e18ae2280ee",
+  "mask_patch_sha256": "44d5000cbd8448365eb1896f5f3d68e40b1d3f7b662c8cb276fcbc4c76b4dfd4",
+  "test_patch_sha256": "bb064d1587824f235526ff1a7d6300e4ae61b9d274781059bba53e12a4ae2fd7",
+  "repo_settings_sha256": "3e324b82546a88e535e415391772799fa391da254dbef448e6d58c4138747ec9",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

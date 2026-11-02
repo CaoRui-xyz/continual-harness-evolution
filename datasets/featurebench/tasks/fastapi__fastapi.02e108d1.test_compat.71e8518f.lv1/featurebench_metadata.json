@@ -1,0 +1,22 @@
+{
+  "instance_id": "fastapi__fastapi.02e108d1.test_compat.71e8518f.lv1",
+  "repo": "fastapi/fastapi",
+  "base_commit": "02e108d1663149faac4156dd23595cbdf74287c2",
+  "image_name": "docker.io/libercoders/featurebench-specs_fastapi-instance_835a08db",
+  "fail_to_pass": [
+    "tests/test_compat.py"
+  ],
+  "pass_to_pass": [
+    "tests/test_enforce_once_required_parameter.py",
+    "tests/test_tutorial/test_dependencies/test_tutorial008e.py",
+    "tests/test_tutorial/test_security/test_tutorial006.py",
+    "tests/test_tutorial/test_response_model/test_tutorial004.py",
+    "tests/test_tutorial/test_query_params_str_validations/test_tutorial014.py"
+  ],
+  "problem_statement_sha256": "ce18c54a50ea5434cdea6ca74f820730981b11f4ad1f2054c43720826073c950",
+  "mask_patch_sha256": "79814e2acd86e79c17f649001576559e5a582aa39c98e3cb3fbe87efd347708f",
+  "test_patch_sha256": "d5747caa8d1508c9d88c0f85c73fc379f281899d2377781b145404841c62bede",
+  "repo_settings_sha256": "ef4018f0787d84dc0e65afb7b9911fa9d56654ccec18228c27c54553d88e888d",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

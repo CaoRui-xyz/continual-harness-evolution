@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_concat.ebe5de39.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/arrays/string_/test_concat.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/arrays/floating/test_contains.py",
+    "pandas/tests/arrays/categorical/test_replace.py",
+    "pandas/tests/frame/methods/test_quantile.py",
+    "pandas/tests/frame/methods/test_pop.py",
+    "pandas/tests/indexes/base_class/test_formats.py"
+  ],
+  "problem_statement_sha256": "14a02e2a0f0e4a3dee2326860b1b906ecc6eeb1b02b671cf5a233d13fec07939",
+  "mask_patch_sha256": "dab5469daa281f395a241276bca2a6448054f964bf871b9dd6abfc08f880edf4",
+  "test_patch_sha256": "e5da1dfe0236c6d5a7f7b83309b59da71a3b0046dba4613b911b012bbd4c61d6",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

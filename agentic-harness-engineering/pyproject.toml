@@ -1,0 +1,35 @@
+[project]
+name = "agentic-harness-engineering"
+version = "0.1.0"
+description = "Agentic Harness Engineering"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [
+    { name = "Curry09" },
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "e2b>=1.0.0",
+    "nexau==0.3.9",
+    "greenlet>=3.0.0",  # imported by NexAU (SQLAlchemy asyncio) but not declared in its metadata
+    "harbor @ git+https://github.com/Curry09/harbor-LJH.git",
+    "agent_debugger_core",
+]
+
+[project.scripts]
+agentic-harness-engineering = "evolve:main"
+
+[tool.uv]
+constraint-dependencies = ["claude-agent-sdk<0.1.49"]
+
+[tool.uv.sources]
+nexau = { path = "../third_party/nexau" }
+agent_debugger_core = { path = "agents/evolve_agent/skills/agent-debugger-cli/_source" }
+
+[tool.setuptools]
+py-modules = ["evolve"]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "adapters*"]

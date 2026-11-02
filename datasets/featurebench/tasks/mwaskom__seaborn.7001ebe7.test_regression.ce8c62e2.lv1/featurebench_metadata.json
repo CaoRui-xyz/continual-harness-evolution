@@ -1,0 +1,22 @@
+{
+  "instance_id": "mwaskom__seaborn.7001ebe7.test_regression.ce8c62e2.lv1",
+  "repo": "mwaskom/seaborn",
+  "base_commit": "7001ebe72423238e99c0434a2ef0a0ebc9cb55c1",
+  "image_name": "docker.io/libercoders/featurebench-specs_seaborn-instance_52738fbb",
+  "fail_to_pass": [
+    "tests/test_regression.py"
+  ],
+  "pass_to_pass": [
+    "tests/_marks/test_bar.py",
+    "tests/test_algorithms.py",
+    "tests/test_objects.py",
+    "tests/test_base.py",
+    "tests/_stats/test_density.py"
+  ],
+  "problem_statement_sha256": "b059796a53af3423a78fca1c43276dc86f8a68e2278420e0f6c3f3a9a2fda947",
+  "mask_patch_sha256": "db3b3f7b53ba1cb1bb9833d5df101fd378cb6f45b8432222820de69f7e50d3ab",
+  "test_patch_sha256": "d5bc451b903152d6b825d0577885b8c0c1b44e2c231a4021dc4bee340789f8a2",
+  "repo_settings_sha256": "cd907f7e35ca43edc724aa10c19dcb502ad36b87810e4355c39902d45ad0f944",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

@@ -1,0 +1,22 @@
+{
+  "instance_id": "mlflow__mlflow.93dab383.test_judge_tool_search_traces.cad8fc4b.lv1",
+  "repo": "mlflow/mlflow",
+  "base_commit": "93dab383a1a3fc9882ebc32283ad2a05d79ff70f",
+  "image_name": "docker.io/libercoders/featurebench-specs_mlflow-instance_efffa87e",
+  "fail_to_pass": [
+    "tests/genai/judges/test_judge_tool_search_traces.py"
+  ],
+  "pass_to_pass": [
+    "tests/cli/test_scorers.py",
+    "tests/utils/test_doctor.py",
+    "tests/store/artifact/test_models_artifact_repo.py",
+    "tests/genai/judges/utils/test_parsing_utils.py",
+    "tests/utils/test_credentials.py"
+  ],
+  "problem_statement_sha256": "83aa1c408b83d84ca71e97e73fe6e4f16a52bff5c05d6f2f5e1b17cc11c2b479",
+  "mask_patch_sha256": "b2e1a4463f36c6be767290f1f08af57e48597a35f3467cd60da4ca3866e2e31f",
+  "test_patch_sha256": "6efb48baaf538bbd8b02c7b2c8d5bec4f0e4429988fc7db40c6ae3bd2e06a4f4",
+  "repo_settings_sha256": "3e324b82546a88e535e415391772799fa391da254dbef448e6d58c4138747ec9",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

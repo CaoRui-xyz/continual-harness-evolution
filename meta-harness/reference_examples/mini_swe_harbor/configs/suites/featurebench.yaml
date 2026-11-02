@@ -1,0 +1,19 @@
+schema_version: 1
+id: featurebench-fast-e2b-random30-search
+source:
+  kind: local_path
+  path: ${DATASETS_ROOT}/featurebench/tasks
+selection:
+  task_name_prefix: ''
+  task_names: []
+  exclude_task_names: []
+  expected_task_count: 30
+  task_names_file: ${DATASETS_ROOT}/featurebench/task_names.txt
+execution:
+  attempts: 2
+  n_concurrent: 20
+  task_timeout_seconds: 1800
+  sandbox_timeout_seconds: 3600
+scoring:
+  metric: fraction_solved
+  solved_reward_threshold: 1.0

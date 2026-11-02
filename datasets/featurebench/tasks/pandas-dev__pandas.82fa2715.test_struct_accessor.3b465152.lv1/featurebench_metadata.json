@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_struct_accessor.3b465152.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/series/accessors/test_struct_accessor.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/frame/methods/test_compare.py",
+    "pandas/tests/series/methods/test_dropna.py",
+    "pandas/tests/arrays/categorical/test_dtypes.py",
+    "pandas/tests/io/sas/test_sas.py",
+    "pandas/tests/reshape/merge/test_merge_index_as_string.py"
+  ],
+  "problem_statement_sha256": "beac007ae766bc1ea6cbfb27ec0c6604d00cd94f1982102a007db53d0ecea11d",
+  "mask_patch_sha256": "5a1b0d9c6ebb8f0dd396024f3dd8a929d42d38b4b98d5c3f62c9f2761817edb4",
+  "test_patch_sha256": "eacc2432d0c7b498faac5ec1a89f54051d63e0e9423067d3e603fbf4db766c2c",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

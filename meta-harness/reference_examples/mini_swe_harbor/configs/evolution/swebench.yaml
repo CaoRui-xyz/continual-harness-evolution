@@ -1,0 +1,14 @@
+name: mini-swe-swebench
+source_config_dir: ${MINI_SWE_SEED_DIR}
+agent_config_filename: src/minisweagent/config/mini.yaml
+suites:
+  - ../suites/swebench.yaml
+smoke_suite: ../suites/swebench-smoke.yaml
+mini_swe:
+  harbor_runner_python: ${META_HARBOR_RUNNER_PYTHON}
+  harbor_source_dir: ${META_HARBOR_SOURCE_DIR}
+  ahe_root: ${AHE_ROOT}
+  sandbox_timeout_seconds: 3600
+  evaluation_lock: ../evaluation_lock.yaml
+  workspace_policy: ../workspace_policy.yaml
+harbor_job_timeout_minutes: 0

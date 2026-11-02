@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_nlargest_nsmallest.08e879a9.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/groupby/methods/test_nlargest_nsmallest.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/tslibs/test_tzconversion.py",
+    "pandas/tests/generic/test_label_or_level_utils.py",
+    "pandas/tests/generic/test_finalize.py",
+    "pandas/tests/copy_view/test_clip.py",
+    "pandas/tests/indexing/test_na_indexing.py"
+  ],
+  "problem_statement_sha256": "5ae1fce96687368290fe8ba5b38f48b69fd753dfe1b56dac130f957e8b4000e1",
+  "mask_patch_sha256": "a8105190e8af19b2728d5eb8a1295155542b5f64e75b04fbf46c8c4156c6607f",
+  "test_patch_sha256": "41ce06c35e5169cd899f5d1302df75ec274ec6f53f448ad84b2fcf333fbdf0f8",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

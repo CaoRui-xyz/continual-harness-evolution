@@ -1,0 +1,21 @@
+{
+  "instance_id": "mesonbuild__meson.f5d81d07.cargotests.8e49c2d0.lv1",
+  "repo": "mesonbuild/meson",
+  "base_commit": "f5d81d071e411618ca0c1ec270565aa6f4b12dbc",
+  "image_name": "docker.io/libercoders/featurebench-specs_meson-instance_80dbfb11",
+  "fail_to_pass": [
+    "unittests/cargotests.py"
+  ],
+  "pass_to_pass": [
+    "unittests/optiontests.py",
+    "unittests/failuretests.py",
+    "unittests/datatests.py",
+    "unittests/taptests.py"
+  ],
+  "problem_statement_sha256": "b6b2e879bac18c0a7788f8053749ff8aeb4e880afdbe01a0ce803a9a93d3329a",
+  "mask_patch_sha256": "70e773090efa252c1cf7b68bd76f3d35fe15c509b217479f15b428ab24873bad",
+  "test_patch_sha256": "28246aba8b9e61db6afd02a497edb0210e4af45764d24ab8f94d9d4b3908e0d4",
+  "repo_settings_sha256": "f98c34ed2150e6dc7bbd8119588e9c17b8b4f450543491856a072db06ffb068e",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

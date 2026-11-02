@@ -1,0 +1,104 @@
+
+dataset: "terminal-bench@2.0"
+
+target_pass_rate: 0.95
+max_iterations: 100
+
+harbor_job_timeout_minutes: 0
+experiment_timeout_minutes: 0
+
+llm:
+  api_key: "${LLM_API_KEY}"
+  base_url: "${LLM_BASE_URL}"
+  model: "gpt-5.4"
+
+harbor:
+  agent: "nexau"
+  env: "e2b"
+  k: 2
+  n_concurrent: 64
+  force_build: false
+  e2b_sandbox_timeout: 3600
+
+source_config_dir: "agents/code_agent_simple"
+agent_config_filename: "code_agent.yaml"
+
+# Best-of-N: each iteration spawns N evolve agents with different strategy
+# constraints, evaluates all variants in parallel, and adopts the best one.
+# Next iteration's evolve agent sees cross-variant comparison to learn from both.
+best_of_n:
+  enabled: false
+  n: 2
+  strategy_hints:
+    - "You MUST focus on STRUCTURAL changes: middleware, tool implementations, or sub-agents. Do NOT modify system prompt or skill content this iteration."
+    - "You MUST focus on GUIDANCE changes: system prompt rules, skill packages, tool descriptions, or LongTermMEMORY. Do NOT create or modify middleware Python files this iteration."
+
+code_agent_patch:
+  llm_config:
+    stream: true
+
+evolve_agent:
+  llm_config:
+    stream: true
+
+explore_agent_patch:
+  llm_config:
+    stream: true
+
+notify:
+  enabled: true
+  feishu_webhook: "${FEISHU_WEBHOOK}"   # https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx
+
+explore_agent:
+  enabled: true
+  model: null
+  timeout_minutes: 60
+
+  code_sources:
+    nexau:
+      type: git
+      url: "https://github.com/nex-agi/NexAU.git"
+      ref: "v0.3.9"
+      local_fallback: "../nexau"
+
+  web_sources:
+    - url: "https://e2b.dev/docs/sandbox/overview"
+      focus: "E2B sandbox 生命周期、预装软件、资源限制"
+    - url: "https://e2b.dev/docs/sandbox/api"
+      focus: "sandbox API：文件操作、进程管理、网络"
+
+    - url: "https://blog.langchain.dev/how-we-built-the-1-agent-on-terminal-bench/"
+      focus: "LangChain deepagents 架构详解：multi-agent、context 管理、tool 设计，52.8%→66.5% 的每个改进步骤和消融数据"
+    - url: "https://humanlayer.dev/blog/building-coding-agents"
+      focus: "HumanLayer harness 设计详解：context 优化策略、hook vs prompt、harness 层优化 vs agent 层优化的区分"
+    - url: "https://www.anthropic.com/engineering/claude-code-best-practices"
+      focus: "Claude Code 最佳实践详解：skill 系统、compaction 策略、hook 设计、prompt 结构、tool 调用模式"
+    - url: "https://www.anthropic.com/engineering/swe-bench-sonnet"
+      focus: "Anthropic SWE-bench 技术报告：agent 架构、搜索策略、编辑方法、消融实验结果"
+    - url: "https://docs.all-hands.dev/modules/usage/architecture"
+      focus: "OpenHands/OpenDevin 架构：event stream、AgentController、sandbox 集成、多 agent 协调"
+    - url: "https://aider.chat/docs/leaderboards/"
+      focus: "Aider 排行榜：不同 LLM 在 coding benchmark 上的得分对比、edit format 影响"
+    - url: "https://www.cognition.ai/blog/devin-terminal-bench"
+      focus: "Devin Terminal Bench 结果和架构设计：长时间任务处理、环境管理、多步推理"
+    - url: "https://terminal-bench.com"
+      focus: "Terminal Bench 官方页面：最新排行榜、评测方法、任务分类"
+
+agent_debugger:
+  enabled: true
+  max_concurrent: 16
+  max_tasks: 90
+  timeout_per_task: 600
+  retry_attempts: 3
+  retry_backoff_seconds: 2.0
+
+  llm:
+    api_key: "${ADB_LLM_API_KEY}"
+    base_url: "${ADB_LLM_BASE_URL}"
+    model: "gpt-5.4"
+
+post_evolve:
+  enabled: false
+  datasets:
+    - name: "swebench-verified"
+      n_concurrent: 24

@@ -1,0 +1,59 @@
+allowed_paths:
+  - src/minisweagent/agents/**
+  - src/minisweagent/config/mini.yaml
+  - src/minisweagent/models/utils/**
+forbidden_paths:
+  - pyproject.toml
+  - uv.lock
+  - README*
+  - docs/**
+  - tests/**
+  - .github/**
+  - src/minisweagent/models/__init__.py
+  - src/minisweagent/models/litellm_model.py
+  - src/minisweagent/models/host_guard.py
+  - src/minisweagent/models/utils/retry.py
+  - src/minisweagent/models/litellm_response_model.py
+  - src/minisweagent/models/litellm_textbased_model.py
+  - src/minisweagent/models/openrouter_model.py
+  - src/minisweagent/models/openrouter_response_model.py
+  - src/minisweagent/models/openrouter_textbased_model.py
+  - src/minisweagent/models/portkey_model.py
+  - src/minisweagent/models/portkey_response_model.py
+  - src/minisweagent/models/requesty_model.py
+  - src/minisweagent/models/test_models.py
+  - src/minisweagent/models/extra/**
+  - src/minisweagent/environments/**
+  - src/minisweagent/run/**
+  - src/minisweagent/__init__.py
+  - src/minisweagent/__main__.py
+fixed_seed_files:
+  - src/minisweagent/models/litellm_model.py
+  - src/minisweagent/models/host_guard.py
+  - src/minisweagent/models/utils/retry.py
+fixed_seed_text_markers:
+  src/minisweagent/models/litellm_model.py:
+    - from minisweagent.models.utils.tool_registry import get_tool_schemas
+    - from minisweagent.models.host_guard import guarded_candidate_utility
+    - tools=guarded_candidate_utility(get_tool_schemas)
+    - "guarded_candidate_utility(\n            parse_toolcall_actions,"
+    - "guarded_candidate_utility(\n            format_toolcall_observation_messages,"
+  src/minisweagent/models/host_guard.py:
+    - sys.addaudithook(_candidate_utility_audit_hook)
+    - sys.setprofile(_candidate_profile_hook)
+    - def guarded_candidate_utility(
+required_candidate_files:
+  - src/minisweagent/models/utils/tool_registry.py
+  - src/minisweagent/models/utils/actions_toolcall.py
+locked_yaml_fields:
+  - model.model_name
+  - model.model_class
+  - model.model_kwargs
+  - model.cost_tracking
+  - agent.step_limit
+  - agent.cost_limit
+  - agent.wall_time_limit_seconds
+  - environment
+locked_yaml_paths:
+  - src/minisweagent/config/mini.yaml
+candidate_config_path: src/minisweagent/config/mini.yaml

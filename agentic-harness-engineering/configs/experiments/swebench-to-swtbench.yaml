@@ -1,0 +1,15 @@
+_base: swtbench.yaml
+_name: mini-swe-swebench-to-swtbench
+source_config_dir: ${MINI_SWE_SEEDS_DIR}/ahe/swebench-to-swtbench
+max_iterations: 10
+
+harbor:
+  n_concurrent: 20
+
+mini_swe:
+  source_commit: ''
+  upstream_commit: ''
+path: ${DATASETS_ROOT}/swtbench-verified-paraphrase/tasks
+task_names_file: ${DATASETS_ROOT}/swtbench-verified-paraphrase/task_names.txt
+expected_task_count: 50
+_description: "SWTBench paraphrase: 50 local tasks selected by task_names.txt."

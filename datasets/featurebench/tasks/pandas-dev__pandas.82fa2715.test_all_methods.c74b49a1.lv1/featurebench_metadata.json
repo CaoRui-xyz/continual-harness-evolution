@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_all_methods.c74b49a1.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/groupby/test_all_methods.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/util/test_doc.py",
+    "pandas/tests/io/parser/test_dialect.py",
+    "pandas/tests/indexes/categorical/test_fillna.py",
+    "pandas/tests/test_sorting.py",
+    "pandas/tests/frame/indexing/test_getitem.py"
+  ],
+  "problem_statement_sha256": "914d318074ec6d31d4653d98ada56c7c2ae2091e800f5209e30772ba493b58a1",
+  "mask_patch_sha256": "13765f15035186f0fb4ad0f351b1d4ddab527dde87e32f295966db690be069f6",
+  "test_patch_sha256": "22a02f022e5436c8151bb9b1c6bf37baa9a3d8fb348bfda5922e5bf349659fde",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

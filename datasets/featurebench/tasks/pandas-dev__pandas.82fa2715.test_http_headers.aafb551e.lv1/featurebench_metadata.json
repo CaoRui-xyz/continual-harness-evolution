@@ -1,0 +1,22 @@
+{
+  "instance_id": "pandas-dev__pandas.82fa2715.test_http_headers.aafb551e.lv1",
+  "repo": "pandas-dev/pandas",
+  "base_commit": "82fa27153e5b646ecdb78cfc6ecf3e1750443892",
+  "image_name": "docker.io/libercoders/featurebench-specs_pandas-instance_15f634a6",
+  "fail_to_pass": [
+    "pandas/tests/io/test_http_headers.py"
+  ],
+  "pass_to_pass": [
+    "pandas/tests/frame/methods/test_reset_index.py",
+    "pandas/tests/io/formats/test_to_excel.py",
+    "pandas/tests/arrays/floating/test_function.py",
+    "pandas/tests/indexing/multiindex/test_sorted.py",
+    "pandas/tests/arrays/categorical/test_map.py"
+  ],
+  "problem_statement_sha256": "611ae93b58eaa6303397b72b00948333fcc1617eaf58ffe307285c30f3f39d1b",
+  "mask_patch_sha256": "d838ffa353dd2823111c48607eb5ec932fdc113fe794ffdb0ae66f3ea0c085fa",
+  "test_patch_sha256": "b09f6f5797d05ba83252dedcc7ebf9508cef861714662c4647a3e5645b8d27d7",
+  "repo_settings_sha256": "e3aa39edbf8fd8ce1446ebe3d4c6b926d8fe62769344d17715ac71986a1070ce",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

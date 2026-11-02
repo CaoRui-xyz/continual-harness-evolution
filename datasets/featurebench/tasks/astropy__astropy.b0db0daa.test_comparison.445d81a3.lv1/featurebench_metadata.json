@@ -1,0 +1,22 @@
+{
+  "instance_id": "astropy__astropy.b0db0daa.test_comparison.445d81a3.lv1",
+  "repo": "astropy/astropy",
+  "base_commit": "b0db0daac6b851596851cb43e5456fb6c916c071",
+  "image_name": "docker.io/libercoders/featurebench-specs_astropy-instance_493bb78b",
+  "fail_to_pass": [
+    "astropy/cosmology/_src/tests/funcs/test_comparison.py"
+  ],
+  "pass_to_pass": [
+    "astropy/wcs/wcsapi/high_level_api.py",
+    "astropy/io/fits/tests/test_division.py",
+    "astropy/table/tests/test_masked.py",
+    "astropy/io/ascii/ipac.py",
+    "astropy/modeling/tests/test_functional_models.py"
+  ],
+  "problem_statement_sha256": "564c3b2e5a2b227e9a332f0811ea38c2bb3e2a14b8556c71ccb989ac6ea53a39",
+  "mask_patch_sha256": "cc29acfada3dab4e377329a07d6bb2414f9ae4d395ea21ca0161e07498d6aef7",
+  "test_patch_sha256": "d65eeb5d5797f4fcc87b2ac90a3e947855b37c913d161cd874b0e23caf24bf77",
+  "repo_settings_sha256": "a820b0e2db00ab371d08401218df46726dc6d632c057f7062343fb587e426ebd",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

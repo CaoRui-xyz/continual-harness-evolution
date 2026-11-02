@@ -1,0 +1,22 @@
+{
+  "instance_id": "astropy__astropy.b0db0daa.test_compression_failures.48dc420b.lv1",
+  "repo": "astropy/astropy",
+  "base_commit": "b0db0daac6b851596851cb43e5456fb6c916c071",
+  "image_name": "docker.io/libercoders/featurebench-specs_astropy-instance_493bb78b",
+  "fail_to_pass": [
+    "astropy/io/fits/hdu/compressed/tests/test_compression_failures.py"
+  ],
+  "pass_to_pass": [
+    "astropy/nddata/tests/test_covariance.py",
+    "astropy/io/votable/tests/test_dataorigin.py",
+    "astropy/convolution/tests/test_convolve_kernels.py",
+    "astropy/modeling/tests/test_rotations.py",
+    "astropy/units/tests/test_quantity_non_ufuncs.py"
+  ],
+  "problem_statement_sha256": "baff453c52e1c69f1df3f4e6f46cfb03abd47c8ff51928bcf35a7d8fe6d36a9e",
+  "mask_patch_sha256": "31450cff505aba10a3a765438f807129398064fe6a2cace5afef2959ce466201",
+  "test_patch_sha256": "a863411ed0212a579733517471d77f0d6e7b398a7395f88b11884b72c1b262c1",
+  "repo_settings_sha256": "a820b0e2db00ab371d08401218df46726dc6d632c057f7062343fb587e426ebd",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

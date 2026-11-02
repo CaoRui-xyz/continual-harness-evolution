@@ -1,0 +1,22 @@
+{
+  "instance_id": "mlflow__mlflow.93dab383.test_genai_eval_utils.2d5441f2.lv1",
+  "repo": "mlflow/mlflow",
+  "base_commit": "93dab383a1a3fc9882ebc32283ad2a05d79ff70f",
+  "image_name": "docker.io/libercoders/featurebench-specs_mlflow-instance_efffa87e",
+  "fail_to_pass": [
+    "tests/cli/test_genai_eval_utils.py"
+  ],
+  "pass_to_pass": [
+    "tests/test_flavors.py",
+    "tests/utils/test_arguments_utils.py",
+    "tests/autologging/test_autologging_client.py",
+    "tests/store/tracking/test_abstract_store.py",
+    "tests/store/artifact/test_databricks_logged_model_artifact_repo.py"
+  ],
+  "problem_statement_sha256": "ad63a4cee570536455399308d4c29ac0d3c86b190748e73c9f052f77a3ff0546",
+  "mask_patch_sha256": "ca99cd893dacd63fb703508fa1d341bd4e55b648faae03dfc956fa648bd7adef",
+  "test_patch_sha256": "da8ce204cc6be1e65c030988f4554172fddea6c90f4d5cc59b9c3ec3fdc997c7",
+  "repo_settings_sha256": "3e324b82546a88e535e415391772799fa391da254dbef448e6d58c4138747ec9",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

@@ -1,0 +1,22 @@
+{
+  "instance_id": "pydantic__pydantic.e1dcaf9e.test_titles.e806bda8.lv1",
+  "repo": "pydantic/pydantic",
+  "base_commit": "e1dcaf9e68fc89731b45235e53245447edf35084",
+  "image_name": "docker.io/libercoders/featurebench-specs_pydantic-instance_78693714",
+  "fail_to_pass": [
+    "tests/test_titles.py"
+  ],
+  "pass_to_pass": [
+    "tests/test_errors.py",
+    "tests/test_annotated.py",
+    "tests/test_parse.py",
+    "tests/test_warnings.py",
+    "tests/test_serialize_as_any.py"
+  ],
+  "problem_statement_sha256": "a2c21067779bc57f0a5887f96f2ba46fadc420c1b52651cf58e331b95bf9ef7a",
+  "mask_patch_sha256": "16cfe8031e238dd5cfde20be76cfd547f86b1f2a2c35d25c4a6028216d123c12",
+  "test_patch_sha256": "9484c07f511eceb1a2e434835238d802f8b5ae0ba105878d9f90f0a475eaf887",
+  "repo_settings_sha256": "8a8588a614ee736d3f4d414a919a9d0725bf3e86e5504b6916372d440a89f336",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

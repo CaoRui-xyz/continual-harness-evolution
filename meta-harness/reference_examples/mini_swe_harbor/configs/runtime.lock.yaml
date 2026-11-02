@@ -1,0 +1,11 @@
+harbor:
+  package_version: 0.8.0
+mini_swe:
+  upstream_commit: a83fcae82d2a08f0ee0c688f9d137b3566c097f8
+python:
+  major_minor: "3.12"
+e2b:
+  adapter: ahe.adapters.harbor_e2b_environment:AheE2BEnvironment
+  # Declared overlap budget for the existing eight-sandbox job plus two
+  # six-concurrent Meta-Harness searches launched together.
+  max_sandboxes: 20

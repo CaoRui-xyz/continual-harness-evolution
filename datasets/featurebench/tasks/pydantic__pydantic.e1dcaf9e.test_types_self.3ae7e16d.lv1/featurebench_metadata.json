@@ -1,0 +1,22 @@
+{
+  "instance_id": "pydantic__pydantic.e1dcaf9e.test_types_self.3ae7e16d.lv1",
+  "repo": "pydantic/pydantic",
+  "base_commit": "e1dcaf9e68fc89731b45235e53245447edf35084",
+  "image_name": "docker.io/libercoders/featurebench-specs_pydantic-instance_78693714",
+  "fail_to_pass": [
+    "tests/test_types_self.py"
+  ],
+  "pass_to_pass": [
+    "tests/test_deprecated_fields.py",
+    "tests/test_experimental_arguments_schema.py",
+    "tests/benchmarks/test_isinstance.py",
+    "tests/test_titles.py",
+    "tests/benchmarks/test_attribute_access.py"
+  ],
+  "problem_statement_sha256": "b4d7decaf5d066d081ca5ccaeb80110190d836c66b9b0673850c1b06e2b15380",
+  "mask_patch_sha256": "fa6cf3d2e4b7bafa04dbf829b8521510386119814e791642d2eff03d737fca8a",
+  "test_patch_sha256": "f1b06cf9c78f2a8f65a5661a7bd2bf4dc493bcc4e78e98ddb9a25b13be3cd604",
+  "repo_settings_sha256": "8a8588a614ee736d3f4d414a919a9d0725bf3e86e5504b6916372d440a89f336",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

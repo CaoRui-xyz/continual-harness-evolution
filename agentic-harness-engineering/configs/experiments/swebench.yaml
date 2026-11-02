@@ -1,0 +1,60 @@
+_base: ../base.yaml
+_name: mini-swe-swebench
+_description: Mini-SWE-Agent 在固定 SWE-bench Verified 随机 50 题上的 k=2 自进化实验。
+_tags: [mini-swe-agent, swe-bench-verified, random50, k2, e2b]
+
+adapter:
+  kind: mini_swe_harbor
+
+source_config_dir: ${MINI_SWE_SEED_DIR}
+agent_config_filename: src/minisweagent/config/mini.yaml
+target_pass_rate: 1.01
+max_iterations: 10
+harbor_job_timeout_minutes: 0
+experiment_timeout_minutes: 0
+
+llm:
+  api_key: ${LLM_API_KEY}
+  base_url: ${LLM_BASE_URL}
+  model: ${LLM_MODEL}
+
+harbor:
+  agent: mini-swe-agent
+  env: e2b
+  k: 2
+  n_concurrent: 20
+  force_build: false
+
+mini_swe:
+  upstream_commit: ''
+  harbor_runner_python: ${META_HARBOR_RUNNER_PYTHON}
+  harbor_source_dir: ${META_HARBOR_SOURCE_DIR}
+  sandbox_timeout_seconds: 3600
+  evaluation_lock: configs/mini_swe/evaluation_lock.yaml
+  workspace_policy: configs/mini_swe/workspace_policy.yaml
+
+code_agent_patch: null
+best_of_n:
+  enabled: false
+explore_agent:
+  enabled: false
+post_evolve:
+  enabled: false
+notify:
+  enabled: false
+
+agent_debugger:
+  enabled: true
+  max_concurrent: 20
+  max_tasks: 50
+  timeout_per_task: 600
+  retry_attempts: 3
+  retry_backoff_seconds: 2.0
+  trace_contract: mini_swe_openai_messages
+  llm:
+    api_key: ${LLM_API_KEY}
+    base_url: ${LLM_BASE_URL}
+    model: ${LLM_MODEL}
+path: ${DATASETS_ROOT}/swebench-verified/tasks
+task_names_file: ${DATASETS_ROOT}/swebench-verified/task_names.txt
+expected_task_count: 50

@@ -1,0 +1,15 @@
+_base: featurebench.yaml
+_name: mini-swe-swebench-to-featurebench
+_description: Cross-dataset Mini-SWE warm start. Generated seed only; target baseline/frontier/history
+  are new.
+source_config_dir: ${MINI_SWE_SEEDS_DIR}/ahe/swebench-to-featurebench
+harbor:
+  n_concurrent: 20
+agent_debugger:
+  max_concurrent: 20
+mini_swe:
+  upstream_commit: ''
+  source_commit: ''
+path: ${DATASETS_ROOT}/featurebench/tasks
+task_names_file: ${DATASETS_ROOT}/featurebench/task_names.txt
+expected_task_count: 30

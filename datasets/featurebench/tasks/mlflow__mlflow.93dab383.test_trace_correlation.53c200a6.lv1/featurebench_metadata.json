@@ -1,0 +1,22 @@
+{
+  "instance_id": "mlflow__mlflow.93dab383.test_trace_correlation.53c200a6.lv1",
+  "repo": "mlflow/mlflow",
+  "base_commit": "93dab383a1a3fc9882ebc32283ad2a05d79ff70f",
+  "image_name": "docker.io/libercoders/featurebench-specs_mlflow-instance_efffa87e",
+  "fail_to_pass": [
+    "tests/store/analytics/test_trace_correlation.py"
+  ],
+  "pass_to_pass": [
+    "tests/genai/datasets/test_evaluation_dataset.py",
+    "tests/utils/test_doctor.py",
+    "tests/data/test_dataset_source.py",
+    "tests/evaluate/logging/test_assessment_entity.py",
+    "tests/utils/test_gorilla.py"
+  ],
+  "problem_statement_sha256": "c6e05dac658217a3514463bbb9e5db2ab67b59c6ee0178e76eca974f0bbf4082",
+  "mask_patch_sha256": "fdcbedc7f12638ef4c295c79e646098421c63391c9841dd5acce407da1d1c662",
+  "test_patch_sha256": "9c2e2ee73cf4ecd7e980079ff82c6b4516abf176beee1c202eaf22aaca908950",
+  "repo_settings_sha256": "3e324b82546a88e535e415391772799fa391da254dbef448e6d58c4138747ec9",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

@@ -1,0 +1,19 @@
+[project]
+name = "meta-harness-mini-swe-harbor"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "litellm>=1.96.2,<2",
+  "pyyaml>=6.0.2",
+  "python-dotenv>=1.1.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.uv]
+package = false

@@ -1,0 +1,22 @@
+{
+  "instance_id": "astropy__astropy.b0db0daa.test_functions.40530bf7.lv1",
+  "repo": "astropy/astropy",
+  "base_commit": "b0db0daac6b851596851cb43e5456fb6c916c071",
+  "image_name": "docker.io/libercoders/featurebench-specs_astropy-instance_493bb78b",
+  "fail_to_pass": [
+    "astropy/uncertainty/tests/test_functions.py"
+  ],
+  "pass_to_pass": [
+    "astropy/timeseries/periodograms/lombscargle/implementations/tests/test_mle.py",
+    "astropy/samp/tests/test_standard_profile.py",
+    "astropy/units/format/console.py",
+    "astropy/visualization/tests/test_lupton_rgb.py",
+    "astropy/units/function/logarithmic.py"
+  ],
+  "problem_statement_sha256": "9d3a93f66ce9c4bbec0b6d0803fd0257ef4d5f9c8b9d917cebe575735bea5916",
+  "mask_patch_sha256": "58765bafc161c7f27078bd9bb2ac8b92a7c0c0816757b816696a53ec02bfb636",
+  "test_patch_sha256": "857b4cc16cd6605317ec55d84a14f5779c16fb3937e82b8a4a2e44cbdd8e6338",
+  "repo_settings_sha256": "a820b0e2db00ab371d08401218df46726dc6d632c057f7062343fb587e426ebd",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}

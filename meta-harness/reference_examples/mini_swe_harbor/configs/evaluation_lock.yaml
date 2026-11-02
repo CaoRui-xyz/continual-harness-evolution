@@ -1,0 +1,16 @@
+agent:
+  step_limit: 250
+  cost_limit: 0.0
+  wall_time_limit_seconds: 1800
+harbor_runtime:
+  command_timeout_seconds: 60
+model:
+  model_name: deepseek/deepseek-v4-flash
+  model_class: litellm
+  cost_tracking: ignore_errors
+  model_kwargs:
+    api_base: https://api.deepseek.com
+    temperature: 0.0
+    drop_params: true
+model_api_key_env: DEEPSEEK_API_KEY
+

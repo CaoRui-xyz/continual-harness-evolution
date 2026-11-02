@@ -1,0 +1,22 @@
+{
+  "instance_id": "astropy__astropy.b0db0daa.test_basic_rgb.067e927c.lv1",
+  "repo": "astropy/astropy",
+  "base_commit": "b0db0daac6b851596851cb43e5456fb6c916c071",
+  "image_name": "docker.io/libercoders/featurebench-specs_astropy-instance_493bb78b",
+  "fail_to_pass": [
+    "astropy/visualization/tests/test_basic_rgb.py"
+  ],
+  "pass_to_pass": [
+    "astropy/coordinates/representation/cartesian.py",
+    "astropy/io/ascii/tests/test_compressed.py",
+    "astropy/wcs/tests/test_prjprm.py",
+    "astropy/stats/tests/test_sigma_clipping.py",
+    "astropy/io/ascii/tests/test_qdp.py"
+  ],
+  "problem_statement_sha256": "7319ebd1159c5cbe68c6b6742ec7e5595aca663aaeda8c7a40c7abff40bcc13c",
+  "mask_patch_sha256": "f9252830020be75995273cf0c80c375117957f373c24437d4b249c821f286c02",
+  "test_patch_sha256": "7c8ce38083d3efb6a79e2336bc7a3d1f03fe3c5ff4eb5bd000904c78524ee07e",
+  "repo_settings_sha256": "a820b0e2db00ab371d08401218df46726dc6d632c057f7062343fb587e426ebd",
+  "runtime_protocol": "featurebench-level1-mask-v1",
+  "official_test_command": "pytest -rA --tb=short --color=no"
+}
