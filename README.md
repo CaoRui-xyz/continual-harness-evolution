@@ -1,4 +1,4 @@
-# Can Coding Agents Sustain Continual Evolution Without Forgetting?
+# Can Coding Agents Sustain Continual Evolution without Forgetting?
 
 This repository contains the code, data splits, and experiment configurations for our empirical study of **continual harness self-evolution**: successively evolving a coding agent's harness across different software-engineering task types, and measuring whether capabilities acquired on earlier tasks are preserved.
 
@@ -48,7 +48,7 @@ continual-evolution/
 | Initial harness (H0) | [Mini-SWE-Agent](https://github.com/SWE-agent/mini-swe-agent) v2.4.6, extended with a tool registry so that evolvers can add or modify tools |
 | Evolvable surface | `src/minisweagent/config/mini.yaml` (prompts), `src/minisweagent/agents/**` (control flow), `src/minisweagent/models/utils/**` (tools, parsers, observations) |
 | Frozen surface | Model provider, model identity and sampling, step/time budgets, environment, runner, datasets, verifiers (`configs/mini_swe/workspace_policy.yaml`, `evaluation_lock.yaml`) |
-| Foundation model | DeepSeek-V4-Flash for both task execution and harness evolution, temperature 0 |
+| Foundation model | DeepSeek-V4-Flash-0731 for both task execution and harness evolution, temperature 0 |
 | Rollouts | 2 per task per round; 250 steps and 30 min wall-clock per rollout |
 | Sandbox | E2B, 1 h sandbox lifetime |
 | Evolution rounds | AHE: 9 rounds of evolution (10 evaluated harnesses); Meta-Harness: 5 rounds |
@@ -209,9 +209,12 @@ bash agentic-harness-engineering/scripts/evaluate_mini_swe_workspace_harbor.sh \
 
 Forgetting is reported as the absolute drop Δ = Eval(H<sub>src</sub>, D<sub>src</sub>) − Eval(H<sub>cont</sub>, D<sub>src</sub>) and the relative drop ρ = Δ / Eval(H<sub>src</sub>, D<sub>src</sub>).
 
-## Results
+## Notes
 
-Our experiments were conducted using `DeepSeek-V4-Flash-0731`. Results may differ when using the current version of the Flash model.
+1. Our experiments were conducted using DeepSeek-V4-Flash-0731. Results may differ when using the current version of the Flash model.
+2. The datasets are included directly in this repository. However, please ensure proper isolation of the evolution agent to prevent it from accessing task-specific solutions or harness improvements from other experimental directories.
+
+## Results
 
 ### Single-dataset evolution
 
@@ -259,13 +262,3 @@ This work builds on the following open-source projects. Their original licenses 
 - [NexAU](https://github.com/nex-agi/NexAU) — the agent framework behind the AHE evolve agent; v0.3.9 is vendored in `third_party/nexau/` (Apache-2.0)
 - [Harbor](https://github.com/laude-institute/harbor) and [E2B](https://e2b.dev) for task execution
 - [SWE-bench](https://www.swebench.com), [SWT-bench](https://swtbench.com), and [FeatureBench](https://github.com/LiberCoders/FeatureBench) for the evaluation tasks
-
-## Citation
-
-```bibtex
-@article{continual-harness-evolution,
-  title  = {Can Coding Agents Sustain Continual Evolution Without Forgetting?},
-  author = {Anonymous},
-  year   = {2026}
-}
-```
