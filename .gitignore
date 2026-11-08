@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# C1 local runtime (Harbor source and experiment seeds)
+/runtime/
