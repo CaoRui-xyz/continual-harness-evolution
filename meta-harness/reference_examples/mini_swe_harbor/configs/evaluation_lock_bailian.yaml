@@ -1,0 +1,18 @@
+agent:
+  step_limit: 250
+  cost_limit: 0.0
+  wall_time_limit_seconds: 1800
+
+harbor_runtime:
+  command_timeout_seconds: 60
+
+model:
+  model_name: openai/deepseek-v4-flash-0731
+  model_class: litellm
+  cost_tracking: ignore_errors
+  model_kwargs:
+    api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+    temperature: 0.0
+    drop_params: true
+
+model_api_key_env: BAILIAN_API_KEY

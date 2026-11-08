@@ -1,0 +1,15 @@
+name: mini-swe-swebench-smoke
+source_config_dir: ${MINI_SWE_SEED_DIR}
+agent_config_filename: src/minisweagent/config/mini.yaml
+suites:
+  - ../suites/swebench-smoke.yaml
+mini_swe:
+  harbor_runner_python: ${META_HARBOR_RUNNER_PYTHON}
+  harbor_source_dir: ${META_HARBOR_SOURCE_DIR}
+  ahe_root: ${AHE_ROOT}
+  sandbox_timeout_seconds: 3600
+  evaluation_lock: ../evaluation_lock_bailian.yaml
+  workspace_policy: ../workspace_policy.yaml
+# A one-task smoke must have a bounded outer wait; a nonzero score never
+# promotes an unvalidated candidate because this config is not a search suite.
+harbor_job_timeout_minutes: 90
